@@ -1,0 +1,22 @@
+<head><h2>Buy for 5.00rs
+
+</h2>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<form action="{% url 'charge' %}" method='post'>
+    <label for="fname">First Name:</label><br>
+  <input type="text" id="fname" name="fname" ><br>
+  <label for="lname">Last Name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  
+     {% csrf_token %}
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+data-key="{{ key }}"
+data-decription="Paymeny Gate"
+data-amounts="500"
+data-locale="auti">
+</script>
+</form>
+
+
+
